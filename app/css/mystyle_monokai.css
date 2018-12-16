@@ -1,0 +1,368 @@
+.mytooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer; }
+
+.mytooltip .mytooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 10px;
+  top: -30px;
+  left: -30px;
+  position: absolute;
+  z-index: 100; }
+
+.mytooltip:hover .mytooltiptext {
+  visibility: visible;
+  cursor: none; }
+
+.CodeMirror {
+  font-size: 14px;
+  height: 800px; }
+
+h6 {
+  color: blue; }
+
+.mainmodcontainer {
+  width: 100%;
+  height: 92%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: url("../media/spirationdark.png"); }
+  .mainmodcontainer .leftmodcontainer {
+    width: 35%;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    overflow-x: scroll; }
+  .mainmodcontainer .rightmodcontainer {
+    background: url("../media/concrete_seamless.png");
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    border-radius: 10px 0px 0px 0px;
+    padding: 5px;
+    width: 65%;
+    height: 100%; }
+    .mainmodcontainer .rightmodcontainer textarea {
+      color: white;
+      width: 100%;
+      height: 100%; }
+    .mainmodcontainer .rightmodcontainer h1, .mainmodcontainer .rightmodcontainer h2, .mainmodcontainer .rightmodcontainer h3, .mainmodcontainer .rightmodcontainer h4 {
+      text-align: center;
+      color: #EEEEEE; }
+    .mainmodcontainer .rightmodcontainer span[contenteditable] {
+      color: #EEEEEE;
+      font-size: 20px;
+      outline: none;
+      height: 94%;
+      padding: 5px; }
+
+.mymodal .modal-dialog {
+  width: 90%;
+  height: 500px;
+  padding: 0px; }
+
+.modal-backdrop {
+  display: none; }
+
+.modal-content {
+  border: 0px; }
+
+.modal-body {
+  overflow-x: scroll; }
+
+#mynavbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background: url("../media/spirationdark.png");
+  height: 8%; }
+  #mynavbar img {
+    width: 46px;
+    height: 46px;
+    margin-top: 4px;
+    margin-right: 25px; }
+  #mynavbar label {
+    text-align: center; }
+  #mynavbar .navBarLeft {
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 39%; }
+    #mynavbar .navBarLeft .iplogo {
+      position: absolute;
+      margin-left: 10px;
+      max-width: 50px;
+      max-height: 50px;
+      -webkit-transition: top 0.4s;
+      transition: top 0.4s; }
+    #mynavbar .navBarLeft .iplogo2 {
+      margin-left: 10px;
+      max-width: 50px;
+      max-height: 50px; }
+    #mynavbar .navBarLeft .navItem {
+      position: absolute;
+      cursor: pointer;
+      left: 90%;
+      top: 75%;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-transition: left 0.4s;
+      transition: left 0.4s; }
+      #mynavbar .navBarLeft .navItem span {
+        width: 37px;
+        padding: 2px;
+        padding-left: 7px;
+        border-radius: 3px;
+        border-bottom: 0px;
+        background: #222; }
+      #mynavbar .navBarLeft .navItem i {
+        display: inline;
+        color: #aaa; }
+  #mynavbar .navBarRight {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%; }
+    #mynavbar .navBarRight span {
+      cursor: pointer; }
+    #mynavbar .navBarRight .mybutton {
+      display: block;
+      color: #222;
+      opacity: 0.5;
+      padding: 3%;
+      -webkit-transition: background 0.3s ease;
+      transition: background 0.3s ease; }
+    #mynavbar .navBarRight .mybutton:hover {
+      background: #CCCCCC; }
+    #mynavbar .navBarRight .mybutton:active {
+      color: green;
+      background: #FFFFFF !important; }
+
+html, body {
+  width: 100%;
+  height: 100%; }
+
+.configTop, .navigatorTop {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer; }
+  .configTop span, .navigatorTop span {
+    padding: 4px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border: 1px solid grey;
+    border-top: 0px;
+    border-radius: 0px 0px 0px 3px; }
+  .configTop .minusicon, .navigatorTop .minusicon {
+    padding-right: 5px;
+    border: 0px;
+    border-radius: 3px 0px 0px 3px;
+    background: #222;
+    color: #aaa; }
+  .configTop .indescriptionarea, .navigatorTop .indescriptionarea {
+    border: 1px solid grey;
+    border-right: 0px; }
+  .configTop .rounded, .navigatorTop .rounded {
+    border-radius: 0px 3px 3px 0px;
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    border-left: 0px; }
+  .configTop .rounded2, .navigatorTop .rounded2 {
+    border-radius: 3px 0px 0px 3px;
+    border-top: 1px solid #222;
+    border-left: 1px solid #222;
+    border-bottom: 1px solid #222;
+    border-right: 0px;
+    background: #222;
+    color: #aaa; }
+  .configTop i, .navigatorTop i {
+    display: inline; }
+  .configTop div, .navigatorTop div {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+
+.mainContainer {
+  width: 100%;
+  height: 92%;
+  position: relative; }
+
+#editorcontainer {
+  left: 25%;
+  width: 75%;
+  height: 100%;
+  background: blue;
+  position: absolute;
+  -webkit-transition: width 0.4s, left 0.4s;
+  transition: width 0.4s, left 0.4s;
+  z-index: 5; }
+  #editorcontainer .lockicon {
+    position: absolute;
+    cursor: pointer;
+    left: 94%;
+    top: 1%;
+    color: grey;
+    opacity: 0.4;
+    z-index: 6; }
+
+#configcontainer {
+  position: absolute;
+  padding-left: 10px;
+  width: 25%;
+  height: 100%;
+  z-index: 3;
+  background: url("../media/spirationdark.png"); }
+  #configcontainer .configArea {
+    overflow: scroll; }
+
+#navigatorcontainer {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  background: url("../media/spirationdark.png");
+  z-index: 4;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s; }
+  #navigatorcontainer .dataSourceArea {
+    height: 10%;
+    background: url("../media/spirationdark.png");
+    padding: 0px 0px 0px 0px;
+    margin-bottom: 5px;
+    box-shadow: 0px 3px 2px #888888; }
+    #navigatorcontainer .dataSourceArea .btn-group {
+      padding: 5px; }
+  #navigatorcontainer .classArea {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    background: url("../media/spirationdark.png");
+    cursor: pointer;
+    overflow-y: auto;
+    overflow-x: hidden;
+    text-indent: 10px;
+    margin-bottom: 5px;
+    box-shadow: 0px 3px 2px #888888;
+    height: 25%; }
+    #navigatorcontainer .classArea .classItem {
+      color: black; }
+    #navigatorcontainer .classArea .selectedItem {
+      display: block;
+      color: white;
+      background: #222; }
+  #navigatorcontainer .descriptionArea {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 25%;
+    background: url("../media/spirationdark.png");
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 15px;
+    padding-right: 0px;
+    margin-bottom: 5px;
+    box-shadow: 0px 3px 2px #888888; }
+  #navigatorcontainer .propertyArea {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    height: 40%;
+    background: url("../media/spirationdark.png");
+    overflow: scroll;
+    padding: 15px; }
+
+.filler {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+/* manages the slots for local storage on the config page */
+.slotContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3px; }
+  .slotContainer span {
+    padding: 2px; }
+  .slotContainer i {
+    display: inline; }
+  .slotContainer div {
+    display: inline;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+
+.divider {
+  height: 2px;
+  width: 80%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding-left: 14px;
+  padding-right: 14px;
+  background: linear-gradient(135deg, white 0%, #b0a6b0 50%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 ); }
+
+/*rotates an icon in the navbar*/
+.fa-rotate-45 {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+
+.modal-footer {
+  border-top: 0px; }
+
+.modal-body h4 {
+  text-align: center; }
+
+.modal-body p {
+  font-style: italic;
+  color: grey; }

@@ -1,0 +1,21 @@
+
+
+
+    <div   ng-show="vm3.selectedItem.type !== 'snippets' && vm3.selectedItem.type !== 'lesson' ">
+        <div ng-repeat = "property in vm3.selectedItem.properties">
+                    <div>
+                        <label uib-popover="Click to edit this propertyname, or to see its description." popover-placement="top-left" popover-append-to-body="true" popover-trigger="'mouseenter'" popover-popup-delay="700" contenteditable ng-model = "vm3.selectedItem.properties[$index][0]" ng-click= "vm3.selectedProperty === $index? vm3.showPropertyDescription = !vm3.showPropertyDescription:vm3.selectedProperty = $index" ng-change = "vm3.changeAttrName($index)">
+                            <span id = "property{{$index}}"   > {{property[0]}}
+                            </span>
+                        </label>
+                        </div> 
+                        <div style="display:flex;">
+                        <input class="form-control" style="width:75%" id= "propertyvalue{{$index}}" type="text" ng-value = "vm3.selectedItem.properties[$index][2]" ng-model = "vm3.selectedItem.properties[$index][2]" ng-change="vm3.changeAttr($index)"/>
+                        <div style="flex-grow:1"></div>
+                        <span uib-popover="Delete this property; the object itself will remain intact. Check with the show model button if you are unsure." popover-placement="bottom" popover-append-to-body="true" popover-trigger="'mouseenter'" popover-popup-delay="700" ng-click="vm3.deleteProperty($index)" >
+                                <i class="fa fa-2x fa-plus-circle fa-rotate-45  "></i>
+                        </span>
+                    </div>
+        </div>
+    </div>
+    

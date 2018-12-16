@@ -1,0 +1,22 @@
+<div class="navigatorTop">
+    
+    <div></div><strong>Editor</strong><div></div>    
+    
+ </div>  
+ <br>
+
+<div class="slotContainer">
+	<span>Editor theme :</span>
+	<div></div>
+	<select class="form-control" ng-model="vm.selectedTheme" ng-options="theme for theme in vm.themes" ng-change="vm.changeTheme()"></select>
+</div>
+
+
+<br>
+
+
+<div class="slotContainer">
+	<span> Font Size :</span>
+	<div></div>
+	<select class="form-control" ng-model="vm.selectedFontSize" ng-options="fontsize for fontsize in vm.fontSizes" ng-change="vm.changeFontSize()"></select>
+</div>

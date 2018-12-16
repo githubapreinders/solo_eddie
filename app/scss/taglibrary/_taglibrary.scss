@@ -1,0 +1,153 @@
+#navigatorcontainer
+{
+	position:absolute;
+	font-family:$mainwindowfont;
+	width:25%;
+	height:100%;
+	background:$gradient1;
+	z-index: 13;
+	transition: left 0.4s;
+	.libbuttons
+	{
+		height:30px;
+		width:100%;
+		background:$corkColor4;
+	}
+
+
+	.dataSourceArea
+	{
+		height:10%;
+		background:$guttercolor;
+		color:grey;
+		padding:  0px 0px 0px 0px;
+		margin-bottom: 1px;
+		label
+		{
+			background:$corkColor2;
+			color:white;
+			margin-left:auto;
+		}
+		label.active
+		{
+			background:lighten($corkColor2,20%);
+		}
+		label:hover
+		{
+			background:lighten($corkColor2,5%);
+		}
+		.mybuttons
+		{
+			margin-top:10px;
+			text-align:center;
+		}
+		.mynavigator
+		{
+			text-align:center;
+		}
+
+	}
+	.classArea
+	{
+		display:flex;
+		flex-direction: column;
+		flex-grow:1;
+		background:$guttercolor;
+		cursor : pointer;
+		overflow-y:auto;
+		overflow-x:hidden;
+		text-indent:15px;
+		margin-bottom: 1px;
+		height:25%;
+		
+		.classItem
+		{
+			color:grey;
+		}
+		.selectedItem
+		{
+			display:block;
+			color:white;
+			background:$guttercolor;
+		}
+	}
+
+
+
+
+	.descriptionArea
+	{
+		display:flex;
+		flex-direction: column;
+		height:25%;
+		background:#222;
+		overflow-y:auto;
+		overflow-x:hidden;
+		padding: 15px;
+		padding-right: 10px;
+		margin-bottom: 1px;
+		h4
+		{
+			font-family : $filenameheader;
+			text-align: center;
+		}
+		.descriptioncontainer
+		{
+			color:grey;
+		}
+
+	}
+
+
+
+
+	.propertyArea
+	{
+		flex-grow:1;
+		height:40%;
+		background:#222;
+		color:white;
+
+		
+		input.form-control, div.checkbox
+		{
+			width:98%;
+		}
+		input
+		{
+			background:$corkColor3;
+			color:white;
+			border:1px solid $corkColor1;
+
+		}
+		
+		.propcontainer
+		{
+			width:95%;
+		}
+
+		.popovertemplate
+		{
+			min-width:200px;
+			overflow-y: auto;
+			overflow-x:hidden;
+		}
+		h5
+		{
+			text-align: center;
+		}
+	}
+}
+
+
+.divider
+{
+	height:2px;
+	width:80%;
+	margin-top:15px;
+	margin-bottom:15px;
+	padding-left:14px;
+	padding-right:14px;
+	background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(176,166,176,1) 50%, rgba(255,255,255,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+}

@@ -1,0 +1,99 @@
+{"HelloWorld":
+	{
+	"classname":"Hello World",
+	"type":"snippets",
+	"description": "The standard Hello World app to demonstrate the functionality of the Ibis Adapter Framework.",
+	"file":"configurationHelloWorld.xml",
+	"attrs":{},
+	"properties":[]
+
+	},
+	"HelloWorlds":
+	{
+	"classname":"Hello Worlds",
+	"type":"snippets",
+	"description": "The extended Hello World app to demonstrate the functionality of the Ibis Adapter Framework.",
+	"file":"configurationHelloWorlds.xml",
+	"attrs":{},
+	"properties":[]
+	},
+
+	"adapter":
+	{
+		"classname":"adapter",
+		"type":"general",
+		"description":"generic adapter object as part of a module. Make sure to give it a classname of an existing pipe class.",
+		"attrs":{"className":[""],"active":[""]},
+		"properties":[["className","",""], ["active","",""]]
+	},
+
+"module":
+	{
+		"classname":"module",
+		"type":"general",
+		"description":"generic module object which is the top level object of an IBIS adapter. ",
+		"attrs":{},
+		"properties":[]
+	},
+
+"exits":
+	{
+		"classname":"exits",
+		"type":"general",
+		"description":"generic exits object as part of a pipeline. ",
+		"attrs":{},
+		"properties":[]
+	},
+
+"exit":
+	{
+		"classname":"exit",
+		"type":"general",
+		"description":"generic exit object as part of a pipeline. ",
+		"attrs":{"path":["EXIT"],"state":["success","failure"]},
+		"properties":[["pate","","EXIT"], ["state","","success"]]
+	},
+"forward":
+	{
+		"classname":"forward",
+		"type":"general",
+		"description":"generic forward object as part of a pipe. ",
+		"attrs":{"name":["success","failure"],"path":[""]},
+		"properties":[["className","",""], ["name","",""]]
+	},
+"scheduler":
+	{
+		"classname":"scheduler",
+		"type":"general",
+		"description":"Container object to schedule the execution of the pipeline.",
+		"attrs":{},
+		"properties":[]
+	},
+"job":
+	{
+		"classname":"job",
+		"type":"general",
+		"description":"",
+		"attrs":{"name":[""],"adapterName":[""],"receiverName":[""],"cronExpression":[""],"function":[""],"active":[""]},
+		"properties":[["name","",""], ["adapterName","",""], ["receiverName","",""], ["cronExpression","",""], ["function","",""], ["active","",""]]
+	},
+
+
+
+	"pipe":
+	{
+		"classname":"pipe",
+		"type":"general",
+		"description":"generic pipe object as part of a pipeline. Make sure to give it a classname of an existing pipe class.",
+		"attrs":{"className":[""],"name":[""]},
+		"properties":[["className","",""], ["name","",""]]
+	},
+	"pipeline":
+	{
+		"classname":"pipeline",
+		"type":"general",
+		"description":"generic pipeline object; the construction of a pipeline shoul be as follows:......",
+		"children":["pipe","job","scheduler"],
+		"attrs":{"firstPipe":[""]},
+		"properties":[["firstPipe","The name of your first pipe should be filled in here.",""]]
+	},"CleanupOldFilesPipe": {"type": "pipes", "classname": "CleanupOldFilesPipe", "description": "Pipe for deleting files.\n\n ", "attrs": {"classname": ["nl.nn.adapterframework.batch.CleanupOldFilesPipe"], "name": [""], "maxThreads": ["0 (unlimited)"], "filePattern": [""], "filePatternSessionKey": [""], "subdirectories": ["false"], "lastModifiedDelta": ["0"], "deleteEmptySubdirectories": ["false"], "wildcard": [""], "excludeWildcard": [""], "minStableTime": ["1000 [ms]"]}, "properties": [["classname", "nl.nn.adapterframework.batch.CleanupOldFilesPipe", "nl.nn.adapterframework.batch.CleanupOldFilesPipe"], ["name", "name of the Pipe", ""], ["maxThreads", "maximum number of threads that may call doPipe(java.lang.Object, nl.nn.adapterframework.core.IPipeLineSession) simultaneously", "0 (unlimited)"], ["filePattern", "files that match this pattern will be deleted. Parameters of the pipe are applied to this pattern. If this attribute is not set, the input of the pipe is interpreted as the file to be removed", ""], ["filePatternSessionKey", "", ""], ["subdirectories", "when true, files  in subdirectories will be deleted, too", "false"], ["lastModifiedDelta", "time in milliseconds that must have passed at least before a file will be deleted", "0"], ["deleteEmptySubdirectories", "when true, empty subdirectories will be deleted, too", "false"], ["wildcard", "filter of files to delete. If not set and a directory is specified, all files in the directory are interpreted to be deleted", ""], ["excludeWildcard", "Filter of files to be excluded for deletion", ""], ["minStableTime", "minimal age of file in milliseconds, to avoid deleting a file while it is still being written", "1000 [ms]"]]}, "CompareIntegerPipe": {"type": "pipes", "classname": "CompareIntegerPipe", "description": "Pipe that compares the integer values of two session variables.\n Used to in combination with IncreaseIntegerPipe to contstruct loops.\n\n ", "attrs": {"name": [""], "maxThreads": ["0 (unlimited)"], "active": ["true"], "durationThreshold": ["-1"], "getInputFromSessionKey": [""], "getInputFromFixedValue": [""], "storeResultInSessionKey": [""], "preserveInput": ["false"], "namespaceAware": ["application default"], "sessionKey1": [""], "sessionKey2": [""], "classname": ["nl.nn.adapterframework.pipes.CompareIntegerPipe"]}, "properties": [["className", "nl.nn.adapterframework.pipes.CompareIntegerPipe", "nl.nn.adapterframework.pipes.CompareIntegerPipe"], ["name", "name of the Pipe", ""], ["maxThreads", "maximum number of threads that may call doPipe(java.lang.Object, nl.nn.adapterframework.core.IPipeLineSession) simultaneously", "0 (unlimited)"], ["active", "controls whether Pipe is included in configuration. When set false or set to something else as \"true\", (even set to the empty string), the Pipe is not included in the configuration", "true"], ["durationThreshold", "if durationThreshold &gt;=0 and the duration (in milliseconds) of the message processing exceeded the value specified, then the message is logged informatory", "-1"], ["getInputFromSessionKey", "when set, input is taken from this session key, instead of regular input", ""], ["getInputFromFixedValue", "when set, this fixed value is taken as input, instead of regular input", ""], ["storeResultInSessionKey", "when set, the result is stored under this session key", ""], ["preserveInput", "when set true, the input of a pipe is restored before processing the next one", "false"], ["namespaceAware", "controls namespace-awareness of possible XML parsing in descender-classes", "application default"], ["sessionKey1", "reference to one of the session variables to be compared", ""], ["sessionKey2", "reference to the other session variables to be compared", ""]]}, "ExchangeMailListener": {"type": "receivers", "classname": "ExchangeMailListener", "description": "Implementation of a IPullingListener that enables a\n GenericReceiver to look in a folder\n for received mails. When a mail is found, it is moved to an output folder (or\n it's deleted), so that it isn't found more then once. A xml string with\n information about the mail is passed to the pipeline.\n \n ", "attrs": {"name": [""], "userName": [""], "password": [""], "mailAddress": [""], "url": [""], "storeEmailAsStreamInSessionKey": [""]}, "properties": [["name", "name of the listener", ""], ["userName", "username used in authentication to exchange mail server", ""], ["password", "", ""], ["mailAddress", "mail address (also used for auto discovery)", ""], ["url", "(only used when mailAddress is empty) url of the service", ""], ["storeEmailAsStreamInSessionKey", "if set, the mail is streamed to a file (eml)", ""]]}, "ServiceDispatcher_ServiceProxy": {"type": "pipes", "classname": "ServiceDispatcher_ServiceProxy", "description": "WebService proxy class that can be used in applications that need to communciate with\n the IBIS Adapterframework via a webservice.", "attrs": {}, "properties": []}, "UnzipPipe": {"type": "pipes", "classname": "UnzipPipe", "description": "Assumes input to be a ZIP archive, and unzips it to a directory.\n\n \n The output of each unzipped item is returned in XML as follows:\n \n  &lt;results count=\"num_of_items\"&gt;\n    &lt;result item=\"1\"&gt;\n      &lt;zipEntry&gt;name in ZIP archive of first item&lt;/zipEntry&gt;\n      &lt;fileName&gt;filename of first item&lt;/fileName&gt;\n    &lt;/result&gt;\n    &lt;result item=\"2\"&gt;\n      &lt;zipEntry&gt;name in ZIP archive of second item&lt;/zipEntry&gt;\n      &lt;fileName&gt;filename of second item&lt;/fileName&gt;\n    &lt;/result&gt;\n       ...\n  &lt;/results&gt;\n \n \n ", "attrs": {"name": [""], "maxThreads": ["0 (unlimited)"], "forwardName": ["\"success\""], "directory": [""], "directorySessionKey": [""], "deleteOnExit": ["true"], "collectResults": ["true"], "keepOriginalFileName": ["false"], "createSubdirectories": ["false"], "classname": ["nl.nn.adapterframework.pipes.FixedResult"]}, "properties": [["className", "nl.nn.adapterframework.pipes.FixedResult", "nl.nn.adapterframework.pipes.FixedResult"], ["name", "name of the Pipe", ""], ["maxThreads", "maximum number of threads that may call doPipe(java.lang.Object, nl.nn.adapterframework.core.IPipeLineSession) simultaneously", "0 (unlimited)"], ["forwardName", "name of forward returned upon completion", "\"success\""], ["directory", "directory to extract the archive to", ""], ["directorySessionKey", "SessionKey with a directory value to extract the archive to", ""], ["deleteOnExit", "when true, file is automatically deleted upon normal JVM termination", "true"], ["collectResults", "if set false, only a small summary is returned", "true"], ["keepOriginalFileName", "if set false, a suffix is added to the original filename to be sure it is unique", "false"], ["createSubdirectories", "if set true, subdirectories in the zip file are supported", "false"]]}, "DirectoryListener": {"type": "receivers", "classname": "DirectoryListener", "description": "File listener that looks in a directory for files \n according to a wildcard and a excludeWildcard.  \n When a file is found, it is moved to an outputdirectory, so that it isn't found more then once.  \n The name of the moved file is passed to the pipeline.  \n\n ", "attrs": {"name": [""], "inputDirectory": [""], "wildcard": [""], "excludeWildcard": [""], "fileTimeSensitive": ["false"], "fileList": [""], "fileListForcedAfter": [""], "outputDirectory": [""], "outputFilenamePattern": [""], "processedDirectory": [""], "numberOfBackups": ["5"], "overwrite": ["false"], "delete": ["false"], "minStableTime": ["1000 [ms]"], "passWithoutDirectory": ["false"], "createInputDirectory": ["false"], "responseTime": ["10000 [ms]"], "numberOfAttempts": ["1"], "waitBeforeRetry": ["1000 [ms]"], "random": ["false"], "classname": ["nl.nn.adapterframework.batch.DirectoryListener"]}, "properties": [["className", "nl.nn.adapterframework.batch.DirectoryListener", "nl.nn.adapterframework.batch.DirectoryListener"], ["name", "name of the listener", ""], ["inputDirectory", "Directory to look for files", ""], ["wildcard", "Filter of files to look for in inputDirectory", ""], ["excludeWildcard", "Filter of files to be excluded when looking in inputDirectory", ""], ["fileTimeSensitive", "when true, the file modification time is used in addition to the filename to determine if a file has been seen before", "false"], ["fileList", "When set a list of files in xml format (&lt;files&gt;&lt;file&gt;/file/name&lt;/file&gt;&lt;file&gt;/another/file/name&lt;/file&gt;&lt;/files&gt;) is passed to the pipleline instead of 1 file name when the specified amount of files is present in the input directory. When set to -1 the list of files is passed to the pipleline whenever one of more files are present.", ""], ["fileListForcedAfter", "When set along with fileList a list of files is passed to the pipleline when the specified amount of ms has passed since the first file for a new list of files was found even if the amount of files specified by fileList isn't present in the input directory yet", ""], ["outputDirectory", "Directory where files are stored while being processed", ""], ["outputFilenamePattern", "Pattern for the name using the MessageFormat.format method. Params: 0=inputfilename, 1=inputfile extension, 2=unique uuid, 3=current date", ""], ["processedDirectory", "Directory where files are stored after being processed", ""], ["numberOfBackups", "number of copies held of a file with the same name. Backup files have a dot and a number suffixed to their name. If set to 0, no backups will be kept.", "5"], ["overwrite", "when set true, the destination file will be deleted if it already exists", "false"], ["delete", "when set true, the file processed will deleted after being processed, and not stored", "false"], ["minStableTime", "minimal age of file in milliseconds, to avoid receiving a file while it is still being written", "1000 [ms]"], ["passWithoutDirectory", "pass the filename without the outputDirectory to the pipeline", "false"], ["createInputDirectory", "when set to true, the directory to look for files is created if it does not exist", "false"], ["responseTime", "Waittime to wait between polling. N.B. not used anymore. Please use pollInterval on the Receiver instead", "10000 [ms]"], ["numberOfAttempts", "maximum number of move attempts before throwing an exception. N.B. not used anymore. Please use maxRetries on the Receiver instead", "1"], ["waitBeforeRetry", "time waited after unsuccesful try. N.B. not used anymore.", "1000 [ms]"], ["random", "when set to true, every file in the directory is passed in a random order", "false"]]}}

@@ -1,0 +1,32 @@
+
+<div class="navigatorTop">
+    <span  style="position:absolute;border: 0px;">
+                    <i class="fa fa-key"></i>
+    </span>
+    <div></div><strong>Storage Slots</strong><div></div>    
+    
+ </div>  
+<br>
+
+
+<div ng-repeat = "item in vm.theslots">
+	<div class="slotContainer">
+		<span>{{$index + 1}}.</span>	
+		<input type="text" id="slot{{$index + 1}}" ng-model = "vm.theslots[$index].alias" ng-change="vm.modifyAlias('aliasslot{{$index + 1}}',vm.theslots[$index].alias)">
+		
+		<span  ng-click="vm.toggleSlot(vm.theslots[$index].id)" >
+		         <i  class="fa" ng-class="{'fa-folder-open':vm.currentSlot === vm.theslots[$index].id, 'fa-folder' : vm.currentSlot !== vm.theslots[$index].id}"></i>
+		</span>
+		<div></div>
+		<span  ng-click="vm.toggleReadonly(item.id)" >
+		         <i  ng-show = "item.locked === false" class="fa fa-unlock "></i>
+		         <i  ng-show = "item.locked === true" class="fa fa-lock "></i>
+		</span>
+	</div>
+</div>
+
+
+
+
+
+

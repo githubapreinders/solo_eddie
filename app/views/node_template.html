@@ -1,0 +1,31 @@
+<div ui-tree-handle class="tree-node tree-node-content" ng-click="node.isDirectory ? vm2.toggle(this) : vm2.setSelectedSlot(this,true)" ng-class="{'tree-node-content-selected':node.id === vm2.selectedSlot}">
+    
+    <a class="btn" ng-if="node.isDirectory">
+        <span class="fa">
+            <i class="afolder" ng-class="{'fa-folder': collapsed, 'fa-folder-open': !collapsed}"></i>
+        </span>
+    </a>
+    
+    <a class="btn" ng-if="!node.isDirectory";>
+        <span>
+            <i class="fa fa-file-o afile"></i>
+        </span>
+    </a>
+    
+    <a class="itemname" ng-click="node.isDirectory?vm2.setSelectedSlot(this):angular.noop()">
+        <span spellcheck="false" name-giver id="treeitem{{node.id}}">{{node.title | cropFilter}}</span>
+    </a>
+
+    <div class="node-actions">
+        <a class="btn" ng-click="vm2.remove(this)">
+            <span><i class="fa fa-times showwhenhover"></i></span>
+        </a>
+        <a class="btn" ng-click="vm2.changeName(this)" id="editname{{node.id}}">
+            <span><i class="fa fa-pencil apencil"></i></span>
+        </a>
+    </div>
+</div>
+
+<ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'./views/node_template.html'"></li>
+</ol>

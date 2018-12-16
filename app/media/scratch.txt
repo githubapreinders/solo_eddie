@@ -1,0 +1,124 @@
+{
+	"HelloWorld":
+	{
+	"classname":"Hello World",
+	"type":"snippets",
+	"description": "The standard Hello World app to demonstrate the functionality of the Ibis Adapter Framework.",
+	"file":"configurationHelloWorld.xml",
+	"attrs":{},
+	"properties":[]
+
+	},
+	"HelloWorlds":
+	{
+	"classname":"Hello Worlds",
+	"type":"snippets",
+	"description": "The extended Hello World app to demonstrate the functionality of the Ibis Adapter Framework.",
+	"file":"configurationHelloWorld.xml",
+	"attrs":{},
+	"properties":[]
+	},
+	"pipe":
+	{
+		"classname":"pipe",
+		"type":"general",
+		"description":"generic pipe object as part of a pipeline. Make sure to give it a classname of an existing pipe class."
+		"attrs":{"className":[""],"name":[""]},
+		"properties":[["className","",""], ["name","",""]]
+	},
+	"pipeline":
+	{
+		"classname":"pipeline",
+		"type":"general",
+		"description":"generic pipeline object; the construction of a pipeline shoul be as follows:......"
+		"attrs":{"firstPipe":[""]},
+		"properties":[["firstPipe","The name of your first pipe should be filled in here.",""]]
+	},
+	"pipeline":
+	{
+		"classname":"pipeline",
+		"type":"general",
+		"description":"generic pipeline object; the construction of a pipeline shoul be as follows:......",
+		"children":["pipe","job","scheduler"],
+		"attrs":{"firstPipe":[""]},
+		"properties":[["firstPipe","The name of your first pipe should be filled in here.",""]]
+	}
+
+
+
+}
+
+
+"adapter":
+	{
+		"classname":"adapter",
+		"type":"general",
+		"description":"generic adapter object as part of a module. Make sure to give it a classname of an existing pipe class.",
+		"attrs":{"className":[""],"active":[""]},
+		"properties":[["className","",""], ["active","",""]]
+	},
+
+"module":
+	{
+		"classname":"module",
+		"type":"general",
+		"description":"generic module object which is the top level object of an IBIS adapter. ",
+		"attrs":{},
+		"properties":[]
+	},
+
+"exits":
+	{
+		"classname":"exits",
+		"type":"general",
+		"description":"generic exits object as part of a pipeline. ",
+		"attrs":{},
+		"properties":[]
+	},
+
+"exit":
+	{
+		"classname":"exit",
+		"type":"general",
+		"description":"generic exit object as part of a pipeline. ",
+		"attrs":{"path":["EXIT"],"state":["success","failure"]},
+		"properties":[["pate","","EXIT"], ["state","","success"]]
+	},
+"forward":
+	{
+		"classname":"forward",
+		"type":"general",
+		"description":"generic forward object as part of a pipe. ",
+		"attrs":{"name":["success","failure"],"path":[""]},
+		"properties":[["className","",""], ["name","",""]]
+	},
+"scheduler":
+	{
+		"classname":"scheduler",
+		"type":"general",
+		"description":"Container object to schedule the execution of the pipeline.",
+		"attrs":{},
+		"properties":[]
+	},
+"job":
+	{
+		"classname":"job",
+		"type":"general",
+		"description":"",
+		"attrs":{"name":[""],"adapterName":[""],,"receiverName":[""],,"cronExpression":[""],,"function":[""],,"active":[""]},
+		"properties":[["name","",""], ["adapterName","",""], ["receiverName","",""], ["cronExpression","",""], ["function","",""], ["active","",""]]
+	},
+
+
+
+
+
+
+<div class="dataSourceArea" ng-include="'./views/dataSourceArea.html'" ></div>
+            <div class="classArea" ng-include="'./views/classArea.html'" ></div>
+            <div class="descriptionArea" ng-include="'./views/descriptionArea.html'" ></div>
+            <div class="propertyArea" ng-include="'./views/propertyArea.html'" ></div>
+
+            <div style="width:100%;height:100%;background:red;"></div>
+
+            ng-class="{leftPanel:!vm.showFullEditor, leftPanelCollapsed:vm.showFullEditor}"

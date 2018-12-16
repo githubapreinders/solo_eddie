@@ -1,0 +1,22 @@
+
+<div class="spaceabove" ></div>
+<div class="treeview" ng-controller="ApsTreeController as vm2">
+    <div ui-tree="vm2.treeOptions" id="tree-root" data-drag-delay="300">
+        <ol ui-tree-nodes ng-model="vm2.list">
+            <li ng-repeat="node in vm2.list" ui-tree-node ng-include="'./views/node_template.html'" ng-animate="{enter:'animate-enter',leave:'animate-leave'}"></li>
+        </ol>
+    </div>
+    <div class="filler"></div>
+
+    <div class="treeview_buttonsbelow">
+        <div class="btn-group"  >
+
+            <label class="btn" ng-click = "vm2.addFileOrFolder('folder')"><img src="./media/icons/add_folder.svg" class="myicon"><span>&nbsp;add folder</span></label>
+            <label class="btn" id="addfile" ng-click = "vm2.addFileOrFolder('file')"><img src="./media/icons/add_file.svg" class="myicon"><span>&nbsp;add file</span></label>
+        </div>
+    </div>
+
+   
+</div>
+
+

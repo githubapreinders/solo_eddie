@@ -1,0 +1,204 @@
+
+
+.mynavbar
+{
+	height : 9%;
+	
+	.navbarupper
+	{
+		background:$corkColor4;
+		display:flex;
+		align-items:center;
+
+
+		height:70%;
+		.iplogo
+		{
+			transition:transform 0.9 ease;
+			margin-top:auto;
+			margin-bottom:auto;
+			margin-left:10px;
+			max-width : 30px;
+			max-height : 30px;
+		}
+		.iplogo:hover
+		{
+			transform: rotate(20deg);
+		}
+		
+		.ui-select-bootstrap>.ui-select-match>.btn
+		{
+			
+			border:1px solid $corkColor1;
+			background:$corkColor4;
+			color:darken(white,10%);
+			font-size:12px;
+			text-shadow:none;
+		}
+
+
+		.navHeading a 
+		{	       
+	        transition:text-shadow 0.5s ease;
+	        margin-left:10px;
+	        margin-right:30px;
+	        text-transform: uppercase;
+	        letter-spacing: 5px;
+	        color:lighten($corkColor2,20%);
+	        text-decoration:none;
+	        text-shadow:
+			0px 0px 0 $corkColor3,
+			0px 0px 0 $corkColor3,
+			0px 0px 0 $corkColor3,
+			0px 0px 0 $corkColor3;
+
+      	}
+
+      	.navHeading a:hover
+      	{
+      		text-shadow:
+			-1px -1px 0 #AAA,
+			1px -1px 0 #AAA,
+			-1px 1px 0 #AAA,
+			1px 1px 0 #AAA;
+      	}
+
+
+      	.loginpane
+      	{
+      		display:flex; 
+      		flex-direction: row;
+      		align-items: center;
+      	}
+      	input
+		{
+			background:$corkColor4;
+			color:darken(white,10%);
+			font-size:16px;
+			border:1px solid $corkColor1;
+		}
+
+
+
+      	.loginIcons
+		{
+		  font-size:20px; 
+		  padding: 5px;
+		  color:lighten($corkColor2,15%);
+		  margin-bottom: .4em;
+		  margin-left: .4em;
+		}
+
+      	.loginIcons:hover
+		{
+		  color: lighten($corkColor2,25%);
+		  transform: scale(1.07);
+		  cursor:default;
+		}
+
+		.loginIcons:active
+		{
+		  color: darken($corkColor2, 5%);
+		  transform: scale(1.07);
+		  cursor:default;
+		}
+
+		.loginText
+		{
+		  font-size:20px;
+		  padding:10px;
+		  color: darkgrey;
+		  font-family:cuprum;
+		}
+
+		label
+		{
+			color:lighten($corkColor3,10%);
+			margin-bottom:auto;
+			margin-top:auto;
+		}
+
+	}
+	.navbarlower
+	{
+		background:$corkColor4;
+		display:flex;
+		height:30%;
+		#filename
+		{
+			background:none;
+			font-family:$filenameheader;
+			color:lighten($guttercolor,50%);
+			position:relative;
+			opacity:0.3;
+			color:white;
+			padding-right:2%;
+			padding-left:2%;
+			transition: background 0.3s ease, opacity 0.3s ease;
+			padding-top:0.3%;
+
+		}
+		#filename:hover
+		{
+			color:white;
+			opacity:1.0;
+			background:$corkColor2;
+		}
+
+		#spinnersmall
+		{
+			margin-top:auto;
+			margin-bottom:auto;
+			color:white;
+			font-size:14px;
+			position:absolute;
+			left:3px;
+			z-index:10;
+			
+		}
+
+	}
+	
+}
+
+.mybutton
+{
+	opacity:0.5;
+	color:white;
+	padding-right:2%;
+	padding-left:2%;
+	transition: background 0.3s ease, opacity 0.3s ease;
+	cursor:default;
+	padding-top:0.15%;
+}
+.mybutton:hover
+{
+	color:white;
+	transform:scale(1.02);
+	opacity:1.0;
+	background:$corkColor2;
+}
+.mybutton:active
+{
+	color:green;
+	background:#FFFFFF!important;
+}
+
+
+
+/*displays a dot near the send to iaf button*/
+#sendstatus
+{	
+	width : 6px;
+	height: 6px;
+	margin-top:auto;
+	margin-bottom:auto;
+	border-radius:6px;
+	margin-right:5px;
+}
+
+/*rotates an icon in the navbar*/
+.fa-rotate-45 
+{
+    transform: rotate(45deg);
+}

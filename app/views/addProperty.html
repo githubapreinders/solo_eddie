@@ -1,0 +1,30 @@
+<div class="splitter"></div>			
+<h6 uib-popover="Add a new property to this object with the plus button on the right. Confirm the change with the green V button." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" >new property</h6>
+	<div style="width:100%; display:flex;margin-left:10px;">
+		<div ng-show = "vm3.addingProperty" style="display:flex; flex-direction: column;width:75%">
+                <label contenteditable id="newproperty" ng-model = "vm3.newProperty.propname"  >
+                    placeholder
+                </label>
+                <input class="form-control" ng-model = "vm3.newProperty.propdef"/>
+         </div>
+
+        <div style="flex-grow:1"></div>
+
+        <div style="display:flex; flex-direction: column;">
+        	
+        	<span ng-show = "vm3.addingProperty" ng-click="vm3.addingProperty=false;vm3.showPropertyDescription = false;vm3.addProperty('confirm');" >
+            	<i class="fa fa-2x fa-check-circle  "></i>
+        	</span>
+        	<span ng-show = "!vm3.addingProperty" ng-click="vm3.addingProperty=true;vm3.showPropertyDescription = true;vm3.addProperty('add'); " >
+            	<i class="fa fa-2x fa-plus-circle  "></i>
+        	</span>
+        	<span ng-show = "vm3.addingProperty" ng-click="vm3.addingProperty=false; vm3.showPropertyDescription = false;vm3.addProperty('cancel');" >
+           		 <i class="fa fa-2x fa-minus-circle  "></i>
+        	</span>
+        	
+        </div>
+
+    </div>
+    
+
+    

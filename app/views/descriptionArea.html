@@ -1,0 +1,23 @@
+
+<div class="descriptioncontainer" id="descriptioncontainer">
+	<div ng-show = "vm.showValidationMessage">
+		<div  class="navigatorTop">
+		    <div></div><strong>Validation Message</strong><div></div>    
+		    <span class = "indescriptionarea" ng-click="vm.showValidationMessage = false" >
+		                    <i class="fa fa-minus  "></i>
+		    </span>
+		</div>         
+		{{vm.validationMessage}}  
+	</div>
+
+	<div ng-show = "!vm.showPropertyDescription && !vm.showValidationMessage"> 
+		<h4 >{{vm.selectedItem.classname}}</h4>
+		<p>{{vm.selectedItem.description | cleanupFilter}}</p>
+		</div>
+		<div ng-show = "vm.showPropertyDescription && !vm.showValidationMessage">
+			<h4 id="propertyheader">dummyheader</h4>
+			<p id="propertytext">dummytext</p>
+	</div>
+</div>
+
+

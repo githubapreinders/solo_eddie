@@ -1,0 +1,241 @@
+.custom-button
+{
+  border: 1px solid red;
+  display: inline-block;
+  padding: 6px 12px;
+}
+
+
+#configcontainer {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  z-index: 13;
+  transition: left 0.4s;
+  background: $guttercolor;
+
+  .spaceabove
+  {
+    height:30px;
+    width:100%;
+    background:$corkColor4;
+  }
+  .configArea {
+    height: 5%;
+    overflow: hidden;
+  }
+  .treeview {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .treeview_buttonsbelow {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    label {
+      background: $corkColor2;
+      color: white;
+      margin-left: auto;
+    }
+    label.active {
+      background: lighten($corkColor2, 20%);
+    }
+    label:hover {
+      background: lighten($corkColor2, 5%);
+    }
+  }
+  .tabArea {
+    border: 0px;
+    margin-top: 3px;
+    min-height: 30%;
+    background: lighten($corkColor1, 20%);
+    .tabheaders {
+      background: url($background0);
+      display: flex;
+      flex-direction: row;
+      margin: 0px;
+      padding: 0px;
+      a {
+        text-decoration: none;
+        margin-left: 10px;
+        background: lighten($corkColor1, 10%);
+        border: 1px solid lighten($corkColor1, 10%);
+        border-radius: 3px 3px 0px 0px;
+        color: lighten($guttercolor, 15%);
+        transition: background 0.3s ease;
+        i {
+          width: 30px;
+          text-align: center;
+        }
+      }
+      a:hover {
+        background: lighten($corkColor1, 20%);
+        border: 1px solid lighten($corkColor1, 20%);
+      }
+      .active1 {
+        background: lighten($corkColor1, 20%);
+        border: 1px solid lighten($corkColor1, 20%);
+      }
+    }
+    .slotContainer {
+      display: flex;
+      padding: 5px;
+      div {
+        flex-grow: 1;
+      }
+      input {
+        width: 70%;
+      }
+      select {
+        width: 50%;
+      }
+    }
+  }
+}
+
+.angular-ui-tree-handle {
+  background: #f8faff;
+  border: 1px solid #dae2ea;
+  color: #7c9eb2;
+  padding: 10px 10px;
+
+  height: 25px;
+  padding: 2px;
+
+  color: green;
+
+  &:hover {
+    color: #438eb9;
+    border-color: #dce2e8;
+  }
+}
+
+.tree-handle {
+  padding: 10px;
+  background: #428bca;
+  color: #FFF;
+  margin-right: 10px;
+}
+
+
+.angular-ui-tree-placeholder {
+  background: $corkColor3;
+  border: 2px dashed #bed2db;
+  box-sizing: border-box;
+}
+.angular-ui-tree-placeholder {
+  background: #f0f9ff;
+  border: 2px dashed #bed2db;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+tr.angular-ui-tree-empty {
+  height: 100px
+}
+
+.group-title {
+  background-color: #687074 !important;
+  color: #FFF !important;
+}
+
+
+/* --- Tree --- */
+
+.tree-node {
+  border: 0px solid #dae2ea;
+  border-radius: 2px;
+  background: url($background0);
+  padding: 0px;
+  margin: 0px;
+}
+.nodrop {
+  background-color: #f2dede;
+}
+
+.tree-node-content {
+  margin: 1px;
+  font-size: 12px;
+  color: white;
+  font-family: $mainwindowfont;
+  background: $guttercolor;
+  padding: 2px;
+  
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+
+  .itemname {
+    flex-grow: 1;
+    white-space: nowrap;
+  }
+
+  a {
+    padding: 3px;
+    text-decoration: none;
+    margin: 2px;
+    color: $guttercolor;
+    cursor: move;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  i {
+    color: lighten($guttercolor, 40%);
+    
+    &:hover {
+      color: $guttercolor;
+      cursor: default;
+    }
+  }
+  span {
+    color: darken(white, 20%);
+    i.afolder {
+      color: #c19724;
+    }
+    i.afile {
+      color: white;
+    }
+    i.apencil {
+      color: $corkColor2;
+    }
+    i.apencil:hover {
+      color: lighten($corkColor2, 20%);
+      transform: scale(1.05);
+    }
+  }
+  .showwhenhover {
+    display: block;
+    color: darken($guttercolor, 2%);
+    cursor: default;
+
+    &:hover {
+      display: block;
+      color: red;
+      cursor: default;
+    }
+  }
+}
+
+.tree-node-content-selected {
+  background: $corkColor3;
+  span {
+    color: white
+  }
+}
+
+ol {
+  list-style: none;
+}
+

@@ -1,0 +1,151 @@
+body
+{
+	background:purple;
+}
+
+.contentContainer
+{
+	height:95%;
+	overflow-x:auto;
+	background:$guttercolor;
+	#tryagainbutton
+	{
+		
+		display:block;
+		margin:auto;
+		margin-top:15%;
+
+	}
+	.successfulsubscription
+	{
+		font-size:40px;
+		color: darken(white, 30%);
+		margin: 100px;
+	}
+
+
+	#landingpagespinner
+	{
+		color:orange;
+		margin-left:35%;
+		margin-right:35%;
+		font-size:250px;
+	}
+}
+
+#sendstatususers
+{
+	width : 6px;
+	height: 6px;
+	margin-top:auto;
+	margin-bottom:auto;
+	border-radius:6px;
+	margin-right:5px;
+}
+
+
+
+.mytable
+{
+	thead
+	{
+		background:$corkColor3;
+		th
+		{
+			color:white;
+			text-align:center;
+			margin-left:24;
+		}
+		.lastcolumn
+		{
+
+		}
+		.highlightheader
+		{
+			cursor:default;
+		}
+		.highlightheader:hover
+		{
+			color : lighten($corkColor2,50%);
+		}
+
+	}
+	tbody
+	{
+		color:lighten($corkColor4,20%);
+		background:$guttercolor;
+		input
+		{
+			background:$corkColor3;
+			color:white;
+			border:1px solid $corkColor1;
+		}
+		#centerthiscolumn 
+		{
+			margin-left:auto;
+			margin-right:auto;
+		}
+		td.centeralso
+		{
+				text-align:center;
+				span
+				{
+					cursor:pointer;
+				}
+				.highlighted
+				{
+					color:#EA394C;
+				}
+		}
+		.userbuttons
+		{
+			display:flex;
+			justify-content:space-around;
+			margin-right:20px;
+			.fa-exclamation
+			{
+				position:absolute;
+				margin-top:5px;
+				right:7px;
+				color:#EA394C;
+			}
+		}
+	}
+}
+
+.icons
+{
+  .fa-save
+  {
+  	color:$corkColor2;
+  }
+  .fa-save:hover
+  {
+  	color:lighten($corkColor2,20%);
+  	transform:scale(1.5);
+  }
+  .fa-remove
+  {
+  	color:darken(red,30%);
+  }
+  .fa-remove:hover
+  {
+  	color:red;
+  	transform:scale(1.5);
+  }
+  .fa-envelope
+  {
+  	color:$corkColor1;
+  }
+  .fa-envelope:hover
+  {
+  	color:lighten($corkColor1,20%);
+  	transform:scale(1.5);
+  }
+}
+
+a
+{
+	text-decoration:none;
+	color:black;
+}

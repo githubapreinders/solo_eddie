@@ -1,0 +1,5 @@
+
+Header Set Access-Control-Allow-Origin "*"
+Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
+Access-Control-Max-Age: 1728000
+

@@ -1,0 +1,15 @@
+colors
+
+#FE41FF (roze);
+
+#00E5FF (aquamarijn)
+
+#FFC107 (gelig)
+
+#00ABFF (lichtblauw)
+
+#8BC34A (grasgroen)
+
+#1AB394 (zeegroen)
+
+#EA394C (rood)

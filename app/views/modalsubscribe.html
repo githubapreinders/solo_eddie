@@ -1,0 +1,39 @@
+<div class="modal-header">
+    <h3 style="text-align: center;" class="modal-title" id="modal-title">Subscription</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    
+    <div class="navigatorTop">
+    
+    <div></div><i> You will be granted 24h access to Ibis4Education after filling in the form and using the password we will send you by email.</i><div></div>    
+    
+ </div>  
+<br>
+
+<div class="slotContainer">
+	<span>First name</span>
+	<div></div>	
+	<input type="text" class="form-control" ng-model="vm8.firstname">
+</div>
+
+<div class="slotContainer">
+	<span>Last name</span>
+	<div></div>	
+	<input type="text" class="form-control" ng-model="vm8.lastname" >
+</div>
+
+<div class="slotContainer">
+	<span>Email address</span>
+	<div></div>	
+	<input type="text" class="form-control" ng-model="vm8.email" >
+</div>
+
+</div>
+<div class="modal-footer">
+    <div style="display:flex">
+    <button class="btn btn-default" type="button" ng-click="vm8.closeModal()">Cancel</button>
+    <div class="filler"></div>
+	<button class="btn btn-success" type="button" ng-click="vm8.submitSubscription()">Submit </button>   
+	
+	</div>
+</div>

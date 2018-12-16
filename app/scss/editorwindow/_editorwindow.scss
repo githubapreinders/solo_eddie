@@ -1,0 +1,71 @@
+.CodeMirror 
+{
+	font-size:14px;	
+	height: 800px;
+}
+
+.editorcontainer
+{
+  	left:25%;
+  	width:75%;
+  	height:100%;
+    border:1px solid darken(white,40%);
+    border-radius:7px 0px 0px 3px;
+  	background:$guttercolor;
+  	position:absolute;
+  	transition: width 0.4s, left 0.4s;
+  	z-index:55;
+    overflow-y:hidden;
+    
+   
+
+  	.lockicon
+  	{
+  		position:absolute;
+  		cursor:pointer;
+  		left:94%;
+  		top : 1%;
+  		color: grey;
+  		opacity:0.4;
+  		z-index:6
+  	}
+
+}
+
+.CodeMirror-hints {
+  position: absolute;
+  z-index: 100;
+  overflow: hidden;
+  list-style: none;
+
+  margin: 0;
+  padding: 2px;
+
+  -webkit-box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  -moz-box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  box-shadow: 2px 3px 5px rgba(0,0,0,.2);
+  border-radius: 3px;
+  border: 1px solid $corkColor1;
+
+  background: $corkColor4;
+  color: white;
+  font-size: 90%;
+  font-family: monospace;
+
+  max-height: 20em;
+  overflow-y: auto;
+}
+
+.CodeMirror-hint {
+  margin: 0;
+  padding: 0 4px;
+  border-radius: 2px;
+  white-space: pre;
+  color: darken(white,30%);
+  cursor: pointer;
+}
+
+li.CodeMirror-hint-active {
+  background: $corkColor2;
+  color: white;
+}

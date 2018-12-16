@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h3 style="text-align: center;" class="modal-title" id="modal-title">DELETE ITEM ?</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    
+    <h4>{{vm6.item.classname}}</h4>
+    <p>{{vm6.item.description}}</p>
+
+</div>
+<div class="modal-footer">
+    <div style="display:flex; width:100%;">
+	    <button class="btn btn-primary" type="button" ng-click="vm6.closeModal()">NO</button>
+	    <div class="filler"></div>
+	    <button class="btn btn-warning" type="button" ng-click="vm6.deleteItem()">DELETE</button>
+	</div>
+</div>

@@ -1,0 +1,98 @@
+
+<div   style="height: 100%; width:100%;">       
+            <div  class="mynavbar">
+                <div class="navbarupper">
+                    <img src="./media/ibis3_black.svg" class="iplogo" id="iplogo"  />
+                    <h5 id="mytitle" class="navHeading"><a ui-sref="app">user management</a></h5>
+                    <span ng-show = "vm.showSpinner" style="color:grey;">
+                        <i   class="fa fa-spinner fa-spin fa-2x fa-fw "></i>
+                    </span>
+                <div class="filler"></div>
+                <span class="loginText" ng-show = "vm.user !== null ">{{vm6.user.firstname}}</span>
+                </div>
+                <div class="navbarlower">
+                    
+                    
+                       <div class="filler"></div>
+
+
+                       <div uib-popover="Return to the tags page." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" ui-sref="app.moderator" >
+                       <img src="./media/icons/tags.svg" class="myicon" />
+                       <span  >tags</span>
+                       </div>
+
+                       <div  uib-popover="Save all users that wear an exclamation mark." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton"  >
+                       <img src="./media/icons/save.svg" class="myicon" />
+                       <span  >save all</span>
+                       </div>
+
+                       
+                       <div id="sendstatususers"></div>
+                </div>
+            </div>
+
+<div id='contentContainer' class="contentContainer">
+
+
+        <table class="table  mytable">
+            <thead>
+                <tr>
+                    <th class="col-xs-2 highlightheader" ng-click="vm6.sortOnHeaderName('email')">Email</th>
+                    <th class="col-xs-1">Role</th>
+                    <th class="col-xs-2 highlightheader" ng-click="vm6.sortOnHeaderName('firstname')">First Name</th>
+                    <th class="col-xs-2 highlightheader" ng-click="vm6.sortOnHeaderName('lastname')">Last Name</th>
+                    <th  class="col-xs-1 highlightheader" ng-click="vm6.sortOnHeaderName('instance')"><span uib-popover="Push the instance of a user to toggle ownership. Red means that the instance will be removed from this user." popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" popover-append-to-body>Instance</span></th>
+                    <th class="col-xs-1 " ><span uib-popover="Push the save button to apply any change you have made to a user. Also a user with no instance will get one if there is one available. For new users the system will also to attempt to grant an instance. " popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" popover-append-to-body>Operation</span></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm6.theusers">
+                    <td><input class="form-control " type="text" value="{{item.email}}" ng-model="item.email"
+                     ng-change="item.showIcon=true;"></td>
+                     
+                     <td>
+                        <div id="centerthiscolumn" class="input-group" style="padding:0px">
+                            <label class="radio-inline">
+                                <input type="radio" ng-checked="item.role==='admin'"
+                                ng-click="item.showIcon=true;vm6.setRole($index,'admin')"> admin
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" ng-checked="item.role==='user'"
+                                ng-click="item.showIcon=true;vm6.setRole($index,'role')"> user
+                            </label>
+                            
+                        </div>
+                    </td>
+                    
+                    <td><input class="form-control " type="text" value="{{item.firstname}}" ng-model="item.firstname"
+                     ng-change="item.showIcon=true;"></td>
+                    <td><input class="form-control " type="text" value="{{item.lastname}}" ng-model="item.lastname"
+                     ng-change="item.showIcon=true;"></td>
+                    
+                    <td class="centeralso"><span  ng-class="{'highlighted':item.highlight===true}"ng-click="vm6.toggleInstance($index);item.highlight=!item.highlight;item.showIcon=true" >{{item.instancename | xFilter}}</span></td>
+
+
+
+     
+                     <td>
+                        <div class="userbuttons" >
+                            <span  ng-model="item.showIcon" class="fa fa-exclamation" ng-show="item.showIcon"></span>
+                            <a   ng-click="showIcon=false;vm6.saveItem($index)">
+                                <img src="./media/icons/save.svg" class="myicon" />
+                            </a>
+                            <a  ng-click="vm6.deleteUser($index)">
+                                <img src="./media/icons/delete.svg" class="myicon" />
+                            </a>
+                            <a  ng-click="vm6.sendMail($index)">
+                                <img src="./media/icons/envelope.svg" class="myicon" />
+                                
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                    </tbody>
+                </table>
+            </div>
+
+</div>

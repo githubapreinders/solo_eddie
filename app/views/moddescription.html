@@ -1,0 +1,45 @@
+
+<div ng-show = "!vm3.showPropertyDescription" style="height:50%;"> 
+	<h2 uib-popover="Change the classname of your current item here. Work on an existing item from the dropdown or create a new item. This classname must be unique." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" id="newclassname" contenteditable ng-model = "vm3.selectedItem.classname">{{vm3.selectedItem.classname}}</h2>
+
+	<!-- <span  contenteditable spellcheck="false"   id = "newdescription" style="white-space: pre;"  ng-model = "vm3.selectedItem.description" class="moderatordescription">{{vm3.selectedItem.description }}</span> -->
+	<textarea id = "newdescription"  spellcheck="false" ng-model="vm3.selectedItem.description"></textarea>
+</div>
+
+
+
+
+
+
+
+<div ng-show = "vm3.showPropertyDescription && vm3.newProperty === null" style="height:100%;">
+	
+	<h2  uib-popover="Change the property name here, or in the appropriate header above the input box on your left (contenteditable)" popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" id="propertyheader">{{vm3.selectedItem.properties[vm3.selectedProperty][0] }}</h2>
+
+	<span  contenteditable spellcheck="false" ng-model = "vm3.selectedItem.properties[vm3.selectedProperty][1]" class="moderatordescription">{{vm3.selectedItem.properties[vm3.selectedProperty][1]}}</span  contenteditable spellcheck="false">
+
+</div>
+
+<div ng-show = "vm3.showPropertyDescription && vm3.newProperty !== null" style="height:50%;">
+	
+	<h2 id="newpropertyheader">{{vm3.newProperty.propname }}</h2>
+
+	<span  contenteditable spellcheck="false" ng-model = "vm3.newProperty.propdes " class="moderatordescription">{{vm3.newProperty.propdes }}</span  contenteditable spellcheck="false">
+
+</div>
+
+
+<div style="height: 50%;" ng-show = "vm3.thexml === null && vm3.selectedItem.type === 'snippets' " >
+        <div class="splitter"></div>  
+        <!-- <div id="xmlwrapper1" style="height: 99%; overflow-y: auto;"> -->
+        <textarea   readonly spellcheck="false" ng-model="vm3.selectedItem.xml"></textarea><!--</div>-->
+        <!--<pre style="height: 99%; overflow-x: hidden;">{{vm3.selectedItem.xml}}</pre>-->
+</div>
+
+<div   style="height: 50%;" ng-show = "vm3.thexml !== null " >
+        <div class="splitter"></div>  
+        <!-- <div id="xmlwrapper2" > -->
+        <textarea   readonly spellcheck="false" ng-model="vm3.thexml"></textarea>
+    	<!--</div>-->
+        <!-- <pre style="height: 99%; overflow-x: hidden;">{{vm3.thexml}}</pre> -->
+</div>

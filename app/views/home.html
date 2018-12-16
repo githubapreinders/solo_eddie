@@ -1,0 +1,112 @@
+ <!-- <link href="css/mystyle.css" rel="stylesheet" ng-disabled = "vm.selectedTheme === 'monokai' ">
+<link href="css/mystyle_monokai.css" rel="stylesheet" ng-disabled = "vm.selectedTheme === 'twilight'"> -->
+
+<div style="height: 100%; width:100%;">       
+        	<div  id="mynavbar" class="mynavbar">
+                <div class="navbarupper">
+                    <img src="./media/ibis3_black.svg" class="iplogo" id="iplogo"  />
+                    <h5 id="mytitle" class="navHeading"><a ui-sref="app">ibis editor</a></h5>
+                    <span ng-show = "vm.showSpinner" style="color:grey;">
+                        <i   class="fa fa-spinner fa-spin fa-2x fa-fw "></i>
+                    </span>
+
+                <div class="filler"></div>
+                <!-- <div ng-include="'./views/login.html'"></div> -->
+                </div>
+                <div class="navbarlower">
+                    
+                    <span id="filename" class="filename " ng-click="vm.showNav()" >
+                        <span id="contents"><span id="spinnersmall" ng-show = "vm.showSpinnerSmall" >
+                            <i   class="fa fa-spinner fa-spin fa-fw "></i>
+                        </span >{{vm.currentKey.title | cropFilter}}</span>
+                       </span>
+                       <div class="filler"></div>
+                       
+
+                       <div ng-show="vm.user.role==='admin'"  ui-sref="app.userpage" class="mybutton">
+                       <img src="./media/icons/users.svg" class="myicon" />
+                       <span  >users</span>
+                       </div>
+                       
+                        <div ng-show="vm.user.role==='admin'"  ui-sref="app.moderator" class="mybutton">
+                       <img src="./media/icons/tags.svg" class="myicon" />
+                       <span  >tags</span>
+                       </div>
+
+                       <div uib-popover="Save your current file tree. These files will be stored as a Configuration.zip file in your Downloads folder. " popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" id="submitform" ng-click="vm.triggerSaveZipEvent()">
+                       <img src="./media/icons/save.svg" class="myicon" />
+                       <span  >save</span>
+                       </div>
+
+                       <div uib-popover="Load a file tree from your local disk or the contents from your Ibis. You have to choose a .zip file. When you want to keep your current files you can merge the new files in (conflicting names will be renamed), or you can choose to save your file tree first. The latter option is safer, since you can always revert to the older version." popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" id="submitform" ng-click="vm.triggerLoadZipEvent()">
+                       <img src="./media/icons/open_folder.svg" class="myicon"  />
+                       <span  >load</span>
+                       </div>
+
+
+                       <div uib-popover-template="'./views/popovertemplate2.html'" popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" id="submitform" ng-click="vm.submitForm()">
+                       <img src="./media/icons/tag_add.svg" class="myicon" />
+                       <span  >insert {{vm.selectedItem.type | typeFilter}}</span>
+                       </div>
+                       
+                       
+
+                        <div uib-popover="Beautify your code! " popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" id="submitform" ng-click="vm.styleEditorContent()">
+                       <img src="./media/icons/format.svg" class="myicon" />
+                       <span  >format</span>
+                       </div>
+
+
+                         <div uib-popover="Start with a blank sheet!" popover-placement="bottom-right" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" id="submitform" ng-click="vm.clearEditor()">
+                       <img src="./media/icons/erase.svg" class="myicon" />
+                       <span  >erase</span>
+                       </div>
+
+                       <div uib-popover="Send your current file tree to the Ibis. Your code will be executed, and the framework will give you feedback from the console application." popover-trigger="'mouseenter'" popover-placement="bottom-right" popover-popup-delay="700" class="mybutton" id="submitform" ng-click="vm.sendZip()">
+                       <img src="./media/icons/send.svg" class="myicon" />
+                       <span  >send</span>
+                       </div>
+                      
+
+
+
+                       
+                       <div id="sendstatus"></div>
+                </div>
+            </div>
+
+<div class="mainContainer">
+         
+    <div  style="height:30px;width:25%;position:absolute;color:white;" >
+        <div  class="configTop" >
+            <div id="myfilebrowsershadow"></div>
+            <div id="mytaglibraryshadow"></div>
+            <div id="therest">thedummytext</div>    
+            <div   ng-click="vm.showConf();" id='myfilebrowser' > <img src="./media/icons/structure.svg" class="myicon"><span>&nbsp;&nbsp;File Browser</span></div>    
+            <div id='mytaglibrary'  ng-click="vm.showConf();" ><img src="./media/icons/library.svg" class="myicon" /><span>&nbsp;Tag Library</span></div>
+         </div>           
+    </div>
+
+<!--  <img src="./media/icons/structure.svg" class="myicon">-->
+<!-- <img src="./media/icons/library.svg" class="myicon" /> -->
+
+    <div id="navigatorcontainer">
+         <div class="dataSourceArea"  ng-include="'./views/libbuttons.html'"></div>
+         <div class="classArea" id="classArea" ng-include="'./views/classArea.html'"></div>
+         <div class="descriptionArea" id="descriptionArea" ng-include="'./views/descriptionArea.html'"></div>
+         <div  class="propertyArea" id="propertyArea" ng-include="'./views/propertyArea.html'"></div>
+    </div>
+
+    <div id="configcontainer">
+        <div  class="treeview"  ng-include = "'./views/treeview.html'"></div>
+    </div>
+
+    <div id = "editorcontainer" class="editorcontainer">
+        <div class = "editorArea" ui-codemirror="{ onLoad : vm.codemirrorLoaded }"></div>
+        <span class="lockicon" ng-click="vm.unlock()" ng-show = "vm.theslots[vm.currentSlotNumber-1].locked">
+            <i class="fa fa-lock fa-4x"></i>
+        </span>
+    </div>
+</div>
+
+</div>

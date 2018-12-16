@@ -1,0 +1,54 @@
+
+<div   style="height: 100%; width:100%;">       
+            <div  class="mynavbar">
+                <div class="navbarupper">
+                    <img src="./media/ibis3_black.svg" class="iplogo" id="iplogo"  />
+                    <h5 id="mytitle" class="navHeading"><a ui-sref="app">subscribe</a></h5>
+                    <span ng-show = "vm.showSpinner" style="color:grey;">
+                        <i   class="fa fa-spinner fa-spin fa-2x fa-fw "></i>
+                    </span>
+                <div class="filler"></div>
+               
+                </div>
+                <div class="navbarlower">
+                    
+                    
+                       <div class="filler"></div>
+                       
+                       <div id="sendstatususers"></div>
+                </div>
+            </div>
+
+            <div id='contentContainer' class="contentContainer">
+               
+
+               <button id="tryagainbutton" ng-show="vm7.tryagain === true;" class="btn btn-lg btn-danger" ng-click="vm7.showSubscriptionDialog();">Try Again </button>
+
+               <div id="landingpagespinner" ng-show = "vm7.showSpinner">
+               <span  >
+                        <i   class="fa fa-spinner fa-spin  fa-fw "></i>
+                </span>
+                </div>
+
+               <div ng-show="vm7.successfulsubscription" class = "successfulsubscription">
+                 <p>You successfully acquired an instance of Ibis4Education. The following resources are at your disposal now :
+                 </p>
+                 <ul>
+                     <li> the <a ui-sref="app">editor</a></li>
+                     <li> the <a href="http://ibis4education-env.bz46fawhzf.eu-central-1.elasticbeanstalk.com/iaf/gui">console</a></li>
+                     <li>the <a href="https://ibissource.org/">course</a></li>
+                 </ul>
+                 <p>Check your mail to receive a password. User name will be your e-mail address. You can start with the first lesson now. Open these sites in separate tabs for a smooth user experience. Have Fun !</p>
+                </div> 
+
+                <div ng-show="vm7.trytomorrow" class = "successfulsubscription">
+                  
+                  <p>The Ibis instance you wanted to acquire is occupied at the moment. Please <a href="https://ibissource.org/contact/" > contact us</a> for a quick solution or try again tomorrow. 
+                 </p>
+
+                </div>
+
+       
+            </div>
+
+</div>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moderator</title>
+</head>
+<body>
+<div style="width:100%;height:100%;">
+            <div  class="mynavbar">
+                <div class="navbarupper">
+                    <img src="./media/ibis3_black.svg" class="iplogo" id="iplogo"  />
+                    <h5  class="navHeading"><a ui-sref="app">tag management</a></h5>
+
+                    <!-- <label>Selected Tag :&nbsp;&nbsp;&nbsp;    <select id = 'myselect' ng-model="vm3.selectedItem" ng-options="value.classname for (key,value) in vm3.dataModel" ng-change="vm3.thexml = null" ></select></label>
+ -->
+                    
+                     <label uib-popover="Select the class you want to work on from the dropdown. Changes you make will be reflected in the taglibrary only after you save this item." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Selected Tag : &nbsp;&nbsp;&nbsp; </label>
+                    <ui-select   class="uiselect" ng-model="$parent.vm3.selectedItem" theme="bootstrap" ng-disabled="vm3.disabled" style="width: 200px;" title="choose a tag" append-to-body="true" ng-change="vm3.thexml = null">
+      <ui-select-match >{{$select.selected.classname}}</ui-select-match>
+      <ui-select-choices repeat="value in vm3.dataModel" group-by="'type'">
+        <div ng-bind-html="value.classname"></div>
+        
+      </ui-select-choices>
+    </ui-select>
+
+
+
+
+
+                    
+
+                    
+                    <label uib-popover="Select a file here to add a snippet to the taglibrary. The contents of the snippet can only be changed inside the editor, but you can add a description and a name." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Selected File : &nbsp;&nbsp;&nbsp; </label>
+                    <ui-select   class="uiselect" ng-model="vm3.file.selected" theme="bootstrap" ng-disabled="vm3.disabled" style="width: 200px;" title="Choose a file" append-to-body="true" ng-change="vm3.newSnippet()">
+      <ui-select-match placeholder="select file...">{{$select.selected.file |cropFilter}}</ui-select-match>
+      <ui-select-choices repeat="item in vm3.slotlist ">
+        <span ng-bind-html="item.file | cropFilter "></span>
+        
+      </ui-select-choices>
+    </ui-select>
+
+
+<!-- (key,value) in  filteredList = vm.navigatorModel | datasourceFilter ;" -->
+
+
+                    <span ng-show = "vm.showSpinner" style="color:grey;">
+                        <i   class="fa fa-spinner fa-spin fa-2x fa-fw "></i>
+                    </span>
+                <div class="filler"></div>
+                <span class="loginText" ng-show = "vm.user !== null ">{{vm3.user.firstname}}</span>
+                </div>
+
+                <div class="navbarlower">
+                    
+                    
+                       <div class="filler"></div>
+                       
+
+                    <div  ui-sref="app.userpage" uib-popover="Go to the user page to edit users." popover-placement="bottom" popover-trigger="'mouseenter'"  class="mybutton"  >
+                       <img src="./media/icons/users.svg" class="myicon" />
+                       <span  >users</span>
+                    </div>
+
+
+                     
+
+                    <div uib-popover="Remove the current item from the tag library. You will be asked for confirmation." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" ng-click="vm3.confirmDelete()" >
+                       <img src="./media/icons/delete.svg" class="myicon" />
+                       <span  >delete</span>
+                    </div>
+
+
+
+                    <div  uib-popover="View a json representation of your current item to see how it will be saved." popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" ng-click="vm3.showModel()" >
+                       <img src="./media/icons/curlybraces.svg" class="myicon" style="width:17px;height:17px;" />
+                       <span  >show model</span>
+                       </div>
+
+
+                    
+                    <div  uib-popover="Add the current modifications to the taglibrary. " popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" ng-click="vm3.saveItem()" >
+                       <img src="./media/icons/save.svg" class="myicon" />
+                       <span  >save item</span>
+                       </div>
+
+
+
+                     <div  uib-popover="Create a new tag for the taglibrary. Choose its type with the blue buttons on the left. Add properties via the new property menu. A snippet is always on the basis of a file from the file select box on the top. " popover-placement="bottom" popover-trigger="'mouseenter'" popover-popup-delay="700" class="mybutton" ng-click="vm3.addNewClass()" >
+                       <img src="./media/icons/tag_add.svg" class="myicon" />
+                       <span  >new item</span>
+                       </div>
+
+                        
+                    </span>
+                       
+                    <div id="sendstatusmod"></div>
+                </div>
+            </div>
+
+
+
+
+            
+
+<div class="mainmodcontainer">
+    <div class="leftmodcontainer" ng-include="'./views/leftmodcontainer.html'"></div>
+
+    <div class = "rightmodcontainer" ng-include="'./views/moddescription.html'">
+    </div>
+</div>
+
+</div>
+
+</html>

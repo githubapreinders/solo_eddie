@@ -1,0 +1,20 @@
+
+<div class="radiobuttonsmod">
+    <div class="btn-group " >
+        <label class="btn myradiobtn" name = "types" ng-model = "vm3.selectedItem.type" ng-checked = "vm3.selectedItem.type == 'pipes'" value="pipes" ng-disabled ="vm3.selectedItem.type !== 'pipes' && vm3.addingItem === false " uib-btn-radio="'pipes'" >pipes</label>
+
+        <label class="btn myradiobtn" name = "types" ng-model = "vm3.selectedItem.type" ng-checked = "vm3.selectedItem.type == 'receivers'" value="receivers" ng-disabled ="vm3.selectedItem.type !== 'receivers' && vm3.addingItem === false " uib-btn-radio="'receivers'" >receivers</label>
+
+        <label class="btn myradiobtn" name = "types" ng-model = "vm3.selectedItem.type" ng-checked = "vm3.selectedItem.type == 'snippets'" value="snippets" ng-disabled ="vm3.selectedItem.type !== 'snippets' && vm3.addingItem === false " uib-btn-radio="'snippets'" >snippets</label>
+
+        <label class="btn myradiobtn" name = "types" ng-model = "vm3.selectedItem.type" ng-checked = "vm3.selectedItem.type == 'general'" value="general" ng-disabled ="vm3.selectedItem.type !== 'general' && vm3.addingItem === false " uib-btn-radio="'general'" >general</label>
+        
+    </div>
+</div>
+
+    
+    <div ng-show = "vm3.thexml === null || vm3.selectedItem.type!=='snippets'" class="addProperty" ng-include="'./views/addProperty.html'"></div>
+    
+<div class="splitter"></div>
+
+    <div id="theprops" class="propArea" ng-include="'./views/propertyAreaMod.html'"></div>
